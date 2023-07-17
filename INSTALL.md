@@ -1,5 +1,29 @@
 ## Installation
 
+### Rui
+
+#### Environment:
+
+- coda env: py310matsegnerf
+- cuda 12.1
+- PyTorch Nightly: `pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121`
+
+#### [Detectron](https://detectron2.readthedocs.io/en/latest/tutorials/install.html):
+
+``` bash
+conda install -c conda-forge gcc # see notes below
+conda install -c conda-forge gxx_linux-64
+conda install -c conda-forge opencv
+python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+```
+
+Notes installing gcc: 
+
+- gcc compatibility with cuda versions: https://stackoverflow.com/questions/6622454/cuda-incompatible-with-my-gcc-version; 
+- to install specific version of gcc with conda: https://stackoverflow.com/questions/47955200/specific-package-version-with-conda-forge
+
+
+
 ### Requirements
 - Linux or macOS with Python ≥ 3.6
 - PyTorch ≥ 1.9 and [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation.
