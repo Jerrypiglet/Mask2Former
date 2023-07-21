@@ -17,7 +17,7 @@ if module_path not in sys.path:
     sys.path.append(module_path)
 
 from utils.utils_io import load_img
-from utils.utils_misc import red
+from utils.utils_misc import red, yellow
 from utils.utils_or.utils_or_io import load_matseg
 from panopticapi import utils as panopticapi_utils
 
@@ -28,7 +28,7 @@ frame_list_root = project_root_path / 'data/openrooms/public'
 
 OR_MATSEG_1_CATEGORIES = [
     {
-        "name": 'or_matseg_stuff',
+        "name": 'or_matseg_instance',
         "id": 0,
         # "isthing": False,
         # "isstuff": True, 
@@ -81,8 +81,8 @@ if __name__ == "__main__":
     dataset_dir = os.getenv("DETECTRON2_DATASETS", "datasets")
 
     # for split in ['train', 'val']:
-    # for split in ['val']:
-    for split in ['train']:
+    for split in ['val']:
+    # for split in ['train']:
         
         image_dir = os.path.join(dataset_dir, f"OpenRooms_public")
 
@@ -107,7 +107,7 @@ if __name__ == "__main__":
         panoptic_json_annotations = []
 
         # get all images 
-        im_info_list = get_im_info_list(split)
+        im_info_list = get_im_info_list(split)[:20]
         
         # process matseg
         for image_id, im_info_dict in tqdm(enumerate(im_info_list)):

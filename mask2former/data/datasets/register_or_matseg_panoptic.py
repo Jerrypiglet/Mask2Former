@@ -1,4 +1,11 @@
-# Copyright (c) Facebook, Inc. and its affiliates.
+'''
+Adapted from mask2former/data/datasets/register_ade20k_panoptic.py
+
+Removing the semseg labels (for semseg tasks)
+
+Rui Zhu
+'''
+
 import json
 import os
 from pathlib import Path
@@ -120,13 +127,13 @@ def register_or_matseg_panoptic(
 _PREDEFINED_SPLITS_OR_MATSEG_PANOPTIC = {
     "or_matseg_panoptic_train": (
         "OpenRooms_public",
-        "OpenRooms_public/im_pan_seg_rgb",
-        "OpenRooms_public/im_pan_seg_rgb_train_instance.json",
+        "OpenRooms_public/im_matseg_pan_seg_rgb",
+        "OpenRooms_public/im_matseg_pan_seg_rgb_train_instance.json",
     ), 
     "or_matseg_panoptic_val": (
         "OpenRooms_public",
-        "OpenRooms_public/im_pan_seg_rgb",
-        "OpenRooms_public/im_pan_seg_rgb_val_instance.json",
+        "OpenRooms_public/im_matseg_pan_seg_rgb",
+        "OpenRooms_public/im_matseg_pan_seg_rgb_val_instance.json",
         # "OpenRooms_public/im_pan_seg_rgb_val_mini100.json",
     ),
 }

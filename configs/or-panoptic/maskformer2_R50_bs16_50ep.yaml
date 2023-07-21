@@ -40,9 +40,9 @@ MODEL:
     IMPORTANCE_SAMPLE_RATIO: 0.75
     TEST:
       # SEMANTIC_ON: True
-      # INSTANCE_ON: True
       SEMANTIC_ON: False
-      INSTANCE_ON: False
+      INSTANCE_ON: True
+      # INSTANCE_ON: False
       PANOPTIC_ON: True
       OVERLAP_THRESHOLD: 0.8
       OBJECT_MASK_THRESHOLD: 0.8
