@@ -5,7 +5,8 @@ MODEL:
     NAME: "MaskFormerHead"
     IN_FEATURES: ["res2", "res3", "res4", "res5"]
     IGNORE_VALUE: 255
-    NUM_CLASSES: 133
+    # NUM_CLASSES: 133
+    NUM_CLASSES: 45
     LOSS_WEIGHT: 1.0
     CONVS_DIM: 256
     MASK_DIM: 256
@@ -38,8 +39,10 @@ MODEL:
     OVERSAMPLE_RATIO: 3.0
     IMPORTANCE_SAMPLE_RATIO: 0.75
     TEST:
-      SEMANTIC_ON: True
-      INSTANCE_ON: True
+      # SEMANTIC_ON: True
+      # INSTANCE_ON: True
+      SEMANTIC_ON: False
+      INSTANCE_ON: False
       PANOPTIC_ON: True
       OVERLAP_THRESHOLD: 0.8
       OBJECT_MASK_THRESHOLD: 0.8

@@ -293,6 +293,7 @@ def register_ade20k_panoptic(
             panoptic_json, image_root, panoptic_root, semantic_root, metadata
         ),
     )
+    # import ipdb; ipdb.set_trace()
     MetadataCatalog.get(panoptic_name).set(
         panoptic_root=panoptic_root,
         image_root=image_root,
@@ -335,7 +336,7 @@ def get_metadata():
     thing_colors = [k["color"] for k in ADE20K_150_CATEGORIES if k["isthing"] == 1]
     stuff_classes = [k["name"] for k in ADE20K_150_CATEGORIES]
     stuff_colors = [k["color"] for k in ADE20K_150_CATEGORIES]
-
+    
     meta["thing_classes"] = thing_classes
     meta["thing_colors"] = thing_colors
     meta["stuff_classes"] = stuff_classes

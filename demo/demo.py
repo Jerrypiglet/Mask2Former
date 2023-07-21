@@ -116,6 +116,7 @@ if __name__ == "__main__":
             img = read_image(path, format="BGR")
             start_time = time.time()
             predictions, visualized_output = demo.run_on_image(img)
+            print('==predictions', predictions.keys(), predictions['panoptic_seg'][0].shape)
             logger.info(
                 "{}: {} in {:.2f}s".format(
                     path,
@@ -139,6 +140,7 @@ if __name__ == "__main__":
                 cv2.imshow(WINDOW_NAME, visualized_output.get_image()[:, :, ::-1])
                 if cv2.waitKey(0) == 27:
                     break  # esc to quit
+                
     elif args.webcam:
         assert args.input is None, "Cannot have both --input and --webcam!"
         assert args.output is None, "output not yet supported with --webcam!"
@@ -150,6 +152,7 @@ if __name__ == "__main__":
                 break  # esc to quit
         cam.release()
         cv2.destroyAllWindows()
+        
     elif args.video_input:
         video = cv2.VideoCapture(args.video_input)
         width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))

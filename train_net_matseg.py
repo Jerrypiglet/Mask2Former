@@ -167,10 +167,6 @@ class Trainer(DefaultTrainer):
         # coco panoptic segmentation lsj new baseline
         elif cfg.INPUT.DATASET_MAPPER_NAME == "coco_panoptic_lsj":
             mapper = COCOPanopticNewBaselineDatasetMapper(cfg, True)
-            
-            # from datasets.register_or_matseg_panoptic import register_or_matseg_panoptic_dataset_func
-            # register_or_matseg_panoptic_dataset_func(['val'])
-            
             return build_detection_train_loader(cfg, mapper=mapper)
         else:
             mapper = None
