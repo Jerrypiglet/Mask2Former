@@ -14,8 +14,8 @@ MODEL:
     # NORM: "SyncBN"
     RES5_MULTI_GRID: [1, 1, 1]  # not used
 DATASETS:
-  # TRAIN: ("or_panoptic_train",)
-  TRAIN: ("or_panoptic_val",)
+  TRAIN: ("or_panoptic_train",)
+  # TRAIN: ("or_panoptic_val",)
   TEST: ("or_panoptic_val",)  # to evaluate instance and semantic performance as well
 SOLVER:
   # IMS_PER_BATCH: 16

@@ -136,8 +136,8 @@ _PREDEFINED_SPLITS_OR_PANOPTIC = {
     "or_panoptic_train": (
         "OpenRooms_public",
         "OpenRooms_public/im_pan_seg_rgb",
-        # "OpenRooms_public/im_pan_seg_rgb_train.json",
-        "OpenRooms_public/im_pan_seg_rgb_val.json",
+        "OpenRooms_public/im_pan_seg_rgb_train.json",
+        # "OpenRooms_public/im_pan_seg_rgb_val.json",
     ), 
     "or_panoptic_val": (
         "OpenRooms_public",
