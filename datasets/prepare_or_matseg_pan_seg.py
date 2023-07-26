@@ -81,8 +81,8 @@ if __name__ == "__main__":
     dataset_dir = os.getenv("DETECTRON2_DATASETS", "datasets")
 
     # for split in ['train', 'val']:
-    for split in ['val']:
-    # for split in ['train']:
+    # for split in ['val']:
+    for split in ['train']:
         
         image_dir = os.path.join(dataset_dir, f"OpenRooms_public")
 
@@ -107,7 +107,7 @@ if __name__ == "__main__":
         panoptic_json_annotations = []
 
         # get all images 
-        im_info_list = get_im_info_list(split)[:20]
+        im_info_list = get_im_info_list(split)
         
         # process matseg
         for image_id, im_info_dict in tqdm(enumerate(im_info_list)):

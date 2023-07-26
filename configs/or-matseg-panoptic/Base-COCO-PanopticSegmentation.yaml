@@ -16,11 +16,11 @@ MODEL:
 DATASETS:
   # TRAIN: ("coco_2017_train_panoptic",)
   # TEST: ("coco_2017_val_panoptic_with_sem_seg",)  # to evaluate instance and semantic performance as well
-  # TRAIN: ("or_matseg_panoptic_train",)
   TRAIN: ("or_matseg_panoptic_train",)
+  # TRAIN: ("or_matseg_panoptic_val",)
   TEST: ("or_matseg_panoptic_val",)  # to evaluate instance and semantic performance as well
 SOLVER:
-  CHECKPOINT_PERIOD: 1000
+  CHECKPOINT_PERIOD: 10000
   # IMS_PER_BATCH: 16
   IMS_PER_BATCH: 4
   BASE_LR: 0.0001
