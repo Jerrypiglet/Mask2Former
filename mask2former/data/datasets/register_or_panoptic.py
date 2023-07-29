@@ -20,7 +20,7 @@ for cat_id, cat_name in enumerate(OR_SEM_SEG_CATEGORIES):
         {
             "name": cat_name,
             "id": cat_id,
-            "isthing": cat_name not in ["floor_44", "ceiling_45"],
+            "isthing": cat_name not in ["wall_43", "floor_44", "ceiling_45"],
             "color": PALETTE[cat_id],
         }
     )
